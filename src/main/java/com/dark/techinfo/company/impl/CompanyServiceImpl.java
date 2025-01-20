@@ -6,6 +6,8 @@ import com.dark.techinfo.company.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class CompanyServiceImpl implements CompanyService {
@@ -15,5 +17,10 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public void addCompany(Company company) {
         companyRepository.save(company);
+    }
+
+    @Override
+    public void addCompanies(List<Company> companyList) {
+        companyRepository.saveAll(companyList);
     }
 }

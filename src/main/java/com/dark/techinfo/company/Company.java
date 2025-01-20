@@ -26,7 +26,7 @@ public class Company {
     
     
     
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "company_technology",
             joinColumns = @JoinColumn(name = "company_id"),

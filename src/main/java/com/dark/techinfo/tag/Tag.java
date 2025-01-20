@@ -21,5 +21,13 @@ public class Tag {
     
     @ManyToMany(mappedBy = "tags")
     Set<Technology> technologies;
-    
+
+    public Tag(String name, Set<Technology> technologies) {
+        this.name = name;
+        this.technologies = technologies;
+    }
+
+    public Tag(String name) {
+        this.name = name;
+    }
 }

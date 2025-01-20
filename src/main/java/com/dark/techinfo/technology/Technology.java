@@ -3,10 +3,7 @@ package com.dark.techinfo.technology;
 import com.dark.techinfo.company.Company;
 import com.dark.techinfo.tag.Tag;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
 
@@ -14,6 +11,7 @@ import java.util.Set;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 public class Technology {
     
@@ -21,6 +19,8 @@ public class Technology {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "technology_id")
     Long id;
+    
+    String name;
     
     String imageUrl;
     
