@@ -34,11 +34,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'gg.jte:jte:3.1.12'
+	implementation 'gg.jte:jte:3.1.16'
 	implementation 'gg.jte:jte-spring-boot-starter-3:3.1.12'
 	implementation 'net.datafaker:datafaker:2.4.1'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'org.webjars.npm:htmx.org:2.0.4'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

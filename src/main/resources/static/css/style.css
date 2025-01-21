@@ -1,0 +1,23 @@
+
+body {
+    background: #d4d4d4;
+    height: 100dvh;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 0.4rem;
+    grid-template-areas:
+        "header"  
+        "main";
+}
+
+.header {
+    
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+    
+}
