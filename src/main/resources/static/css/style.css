@@ -21,3 +21,40 @@ body {
     grid-area: main;
     
 }
+
+
+.card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "info tech"
+        "tag tag";
+
+}
+
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "info"
+            "tech"
+            "tag";
+    }
+}
+
+.info {
+    grid-area: info;
+}
+
+.tech {
+    grid-area: tech;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag {
+    grid-area: tag;
+}

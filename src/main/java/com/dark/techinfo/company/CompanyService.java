@@ -10,4 +10,8 @@ public interface CompanyService {
     
     void addCompanies(List<Company> companyList);
     
+    List<Company> getAllCompanies();
+    
+    List<Company> searchCompany(String query);
+    
 }
