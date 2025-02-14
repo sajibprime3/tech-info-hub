@@ -14,8 +14,6 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
-import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -64,7 +62,7 @@ public class Initializer implements CommandLineRunner {
         
         
         tagService.addTags(tagList);
-        technologyService.addTechologies(technologyList);
-        companyService.addCompanies(companyList);
+        technologyService.addTechnologies(technologyList);
+        companyService.addCompaniesExact(companyList);
     }
 }
