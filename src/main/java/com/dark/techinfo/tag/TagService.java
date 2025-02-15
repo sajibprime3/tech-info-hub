@@ -8,4 +8,8 @@ public interface TagService {
     
     void addTags(List<Tag> tagList);
     
+    List<Tag> getAllTags();
+    
+    Tag getTagById(Long id);
+    
 }
