@@ -9,10 +9,4 @@ import java.util.List;
 
 @Repository
 public interface TechnologyRepository extends JpaRepository<Technology, Long> {
-    
-    @Query("SELECT t FROM Technology t WHERE (:idList IS NOT NULL AND t.id IN :idList)")
-    List<Technology> getTechnologiesById(@Param("idList") List<Long> idList);
-    
-    Technology getTechnoLogyById(Long id);
-    
 }

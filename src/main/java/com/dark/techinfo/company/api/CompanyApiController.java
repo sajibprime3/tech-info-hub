@@ -3,7 +3,7 @@ package com.dark.techinfo.company.api;
 import com.dark.techinfo.company.Company;
 import com.dark.techinfo.company.CompanyService;
 import com.dark.techinfo.company.dto.CompanyDto;
-import com.dark.techinfo.company.dto.CompanyRegistrationRequestDto;
+import com.dark.techinfo.company.dto.CreateCompanyRequestDto;
 import com.dark.techinfo.company.mapper.CompanyMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,18 +21,16 @@ public class CompanyApiController {
     
     @GetMapping
     public List<CompanyDto> getAllCompanies() {
-        List<Company> companyList = companyService.getAllCompanies();
-        
-        return companyList.stream().map(CompanyMapper.toDto).toList();
+        return companyService.getAllCompanies();
     }
     
     @GetMapping("/{id}")
     public CompanyDto getCompany(@PathVariable Long id) {
-        return CompanyMapper.toDto.apply(companyService.getCompany(id));
+        return companyService.getCompany(id);
     }
     
     @PostMapping
-    public ResponseEntity<String> createCompany(@RequestBody CompanyRegistrationRequestDto requestDto) {
+    public ResponseEntity<String> createCompany(@RequestBody CreateCompanyRequestDto requestDto) {
         companyService.addCompany(requestDto);
 
         return ResponseEntity.ok("Successfully Created a Company.");

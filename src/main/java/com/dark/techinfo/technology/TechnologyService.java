@@ -1,21 +1,22 @@
 package com.dark.techinfo.technology;
 
 
+import com.dark.techinfo.technology.dto.CreateTechnologyRequestDto;
+import com.dark.techinfo.technology.dto.TechnologyDto;
+
 import java.util.List;
 
 public interface TechnologyService {
 
-    List<Technology> getTechnologies();
+    List<TechnologyDto> getTechnologies();
     
-    List<Technology> getTechnologiesById(List<Long> id);
+    List<TechnologyDto> getTechnologiesByIds(List<Long> ids);
 
-    Technology getTechnology(Long id);
+    TechnologyDto getTechnology(Long id);
     
-    Technology getTechnologyById(Long id);
+    void addTechnology(CreateTechnologyRequestDto requestDto);
     
-    void addTechnology(Technology technology);
-    
-    void addTechnologies(List<Technology> technologyList);
+    void addTechnologies(List<CreateTechnologyRequestDto> requestDtoList);
 
     
 }

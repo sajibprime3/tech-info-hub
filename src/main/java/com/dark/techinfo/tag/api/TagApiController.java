@@ -3,7 +3,6 @@ package com.dark.techinfo.tag.api;
 import com.dark.techinfo.tag.TagService;
 import com.dark.techinfo.tag.dto.CreateTagRequestDto;
 import com.dark.techinfo.tag.dto.TagDto;
-import com.dark.techinfo.tag.mapper.TagMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,18 +17,17 @@ public class TagApiController {
     
     @GetMapping
     public List<TagDto> getAllTags() {
-        return tagService.getAllTags().stream().map(TagMapper.toDto).toList();
+        return tagService.getAllTags();
     }
     
     @GetMapping("/{id}")
     public TagDto getTag(@PathVariable Long id) {
-        TagDto tagDto = TagMapper.toDto.apply(tagService.getTagById(id));
-        return tagDto;
+        return tagService.getTagById(id);
     }
     
     @PostMapping
     public String createTag(@RequestBody CreateTagRequestDto requestDto) {
-        tagService.addTag(TagMapper.parseRequestToEntity.apply(requestDto));
+        tagService.addTag(requestDto);
         return "Successfully created Tag";
     }
     

@@ -1,11 +1,11 @@
-@import com.dark.techinfo.company.Company
-@import com.dark.techinfo.technology.Technology
-@import com.dark.techinfo.tag.Tag
+@import com.dark.techinfo.company.dto.CompanyDto
+@import com.dark.techinfo.technology.dto.TechnologyDto
+@import com.dark.techinfo.tag.dto.TagDto
 @import java.util.List
 
-@param List<Company> companyList
+@param List<CompanyDto> companyDtoList
 
-@for(Company company: companyList)
+@for(CompanyDto company: companyDtoList)
     <div class="card w-full bg-white rounded-lg shadow-md">
         <div class="info p-4 flex flex-col items-start justify-between">
             <div>
@@ -33,8 +33,8 @@
             <div class="mt-4">
                 <h3 class="text-sm font-medium text-gray-800">Tags:</h3>
                 <div class="flex flex-wrap gap-2 mt-2">
-                    @for(Technology technology: company.getTechnologies())
-                        @for(Tag tag: technology.getTags())
+                    @for(TechnologyDto technology: company.getTechnologies())
+                        @for(TagDto tag: technology.getTags())
                             <span class="px-3 py-1 text-sm text-gray-800 bg-purple-100 bg-opacity-50 rounded">#${tag.getName()}</span>
                         @endfor
                     @endfor

@@ -4,8 +4,7 @@ import com.dark.techinfo.technology.Technology;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Setter
 @Getter
@@ -22,9 +21,9 @@ public class Tag {
     String name;
     
     @ManyToMany(mappedBy = "tags")
-    Set<Technology> technologies;
+    List<Technology> technologies;
 
-    public Tag(String name, Set<Technology> technologies) {
+    public Tag(String name, List<Technology> technologies) {
         this.name = name;
         this.technologies = technologies;
     }

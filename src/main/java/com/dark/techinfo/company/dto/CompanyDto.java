@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,7 +20,7 @@ public class CompanyDto {
     
     String location;
     
-    Set<TechnologyDto> technologies;
+    List<TechnologyDto> technologies;
     
     
     

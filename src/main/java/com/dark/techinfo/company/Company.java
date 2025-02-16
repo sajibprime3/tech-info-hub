@@ -4,7 +4,7 @@ import com.dark.techinfo.technology.Technology;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.List;
 
 @Setter
 @Getter
@@ -32,7 +32,7 @@ public class Company {
             joinColumns = @JoinColumn(name = "company_id"),
             inverseJoinColumns = @JoinColumn(name = "technology_id")
     )
-    Set<Technology> technologies;
+    List<Technology> technologies;
     
     
     

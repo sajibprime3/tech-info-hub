@@ -5,7 +5,7 @@ import com.dark.techinfo.tag.Tag;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
+import java.util.List;
 
 @Setter
 @Getter
@@ -25,7 +25,7 @@ public class Technology {
     String imageUrl;
     
     @ManyToMany(mappedBy = "technologies")
-    Set<Company> companies;
+    List<Company> companies;
     
     @ManyToMany
     @JoinTable(
@@ -33,7 +33,7 @@ public class Technology {
             joinColumns = @JoinColumn(name = "technology_id"),
             inverseJoinColumns = @JoinColumn(name = "tag_id")
     )
-    Set<Tag> tags;
+    List<Tag> tags;
     
     
     

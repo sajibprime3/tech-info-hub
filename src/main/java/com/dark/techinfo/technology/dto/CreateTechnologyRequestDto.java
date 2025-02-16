@@ -1,19 +1,22 @@
 package com.dark.techinfo.technology.dto;
 
-import com.dark.techinfo.tag.dto.TagDto;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@RequiredArgsConstructor
 @Builder
-public class TechnologyDto {
+public class CreateTechnologyRequestDto {
     
     String name;
     
     String imageUrl;
     
-    List<TagDto> tags;
+    List<Long> tags;
     
 }

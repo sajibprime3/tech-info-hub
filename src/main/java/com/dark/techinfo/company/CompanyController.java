@@ -1,5 +1,6 @@
 package com.dark.techinfo.company;
 
+import com.dark.techinfo.company.dto.CompanyDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +19,8 @@ public class CompanyController {
     
     @GetMapping("search")
     String searchCompany(@RequestParam(name = "s") String query, Model model) {
-        List<Company> companyList = companyService.searchCompany(query);
-        model.addAttribute("companyList", companyList);
-
+        List<CompanyDto> companyDtoList = companyService.searchCompany(query);
+        model.addAttribute("companyDtoList", companyDtoList);
         return "fragment/searchResult";
     }
     

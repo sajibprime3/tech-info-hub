@@ -2,13 +2,12 @@ package com.dark.techinfo.company.mapper;
 
 import com.dark.techinfo.company.Company;
 import com.dark.techinfo.company.dto.CompanyDto;
-import com.dark.techinfo.company.dto.CompanyRegistrationRequestDto;
+import com.dark.techinfo.company.dto.CreateCompanyRequestDto;
 import com.dark.techinfo.technology.Technology;
 import com.dark.techinfo.technology.mapper.TechnologyMapper;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Set;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -21,10 +20,10 @@ public class CompanyMapper {
             .id(dto.getId())
             .name(dto.getName())
             .location(dto.getLocation())
-            .technologies(dto.getTechnologies().stream().map(TechnologyMapper.toEntity).collect(Collectors.toSet()))
+            .technologies(dto.getTechnologies().stream().map(TechnologyMapper.toEntity).toList())
             .build();
     
-    public static final BiFunction<CompanyRegistrationRequestDto, Set<Technology>, Company> parseRequestToEntity = (requestDto, technologies) -> Company.builder()
+    public static final BiFunction<CreateCompanyRequestDto, List<Technology>, Company> parseRequestToEntity = (requestDto, technologies) -> Company.builder()
             .name(requestDto.getName())
             .location(requestDto.getLocation())
             .technologies(technologies)
@@ -34,7 +33,7 @@ public class CompanyMapper {
             .id(company.getId())
             .name(company.getName())
             .location(company.getLocation())
-            .technologies(company.getTechnologies().stream().map(TechnologyMapper.toDto).collect(Collectors.toSet()))
+            .technologies(company.getTechnologies().stream().map(TechnologyMapper.toDto).toList())
             .build();
     
     
