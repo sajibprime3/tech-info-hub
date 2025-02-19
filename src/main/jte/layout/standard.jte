@@ -12,6 +12,7 @@
     <link href="/css/style.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/webjars/htmx.org/2.0.4/dist/htmx.js"></script>
+    <script src="/js/index.js"></script>
 </head>
 <body>
 
