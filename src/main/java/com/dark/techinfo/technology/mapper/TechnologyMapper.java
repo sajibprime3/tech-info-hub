@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 public class TechnologyMapper {
     
     public static final Function<TechnologyDto, Technology> toEntity = dto -> Technology.builder()
+            .id(dto.getId())
             .name(dto.getName())
             .imageUrl(dto.getImageUrl())
             .tags(dto.getTags().stream().map(TagMapper.toEntity).toList())
@@ -26,6 +27,7 @@ public class TechnologyMapper {
             .build();
     
     public static final Function<Technology, TechnologyDto> toDto = technology -> TechnologyDto.builder()
+            .id(technology.getId())
             .name(technology.getName())
             .imageUrl(technology.getImageUrl())
             .tags(technology.getTags().stream().map(TagMapper.toDto).toList())

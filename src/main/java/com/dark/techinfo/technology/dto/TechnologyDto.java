@@ -10,6 +10,8 @@ import java.util.List;
 @Builder
 public class TechnologyDto {
     
+    Long id;
+    
     String name;
     
     String imageUrl;

@@ -24,6 +24,11 @@ public class CompanyController {
         return "fragment/searchResult";
     }
     
+    @GetMapping("/form")
+    String showForm() {
+        return "page/companyForm";
+    }
+    
     
     
     
