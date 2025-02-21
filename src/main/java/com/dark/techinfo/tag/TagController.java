@@ -23,7 +23,7 @@ public class TagController {
     
     @GetMapping("/form")
     public String showForm() {
-        return "page/tagForm";
+        return "fragment/tagForm";
     }
     
 }

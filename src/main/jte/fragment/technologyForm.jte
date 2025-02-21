@@ -57,7 +57,7 @@
 <div class="fixed -z-10 inset-0 bg-black backdrop-blur-sm backdrop-filter bg-opacity-40" onclick="hide('#technologyFormPopup', 'flex', 'hidden');"></div>
 
 <!-- Tag Selection Popup -->
-<div id="tagSelectorPopup" class="hidden fixed inset-0 flex justify-center items-center">hi</div>
+<div id="tagSelectorPopup" class="hidden fixed inset-0 flex justify-center items-center"></div>
 
 <script>
     let selectedTags = new Map();

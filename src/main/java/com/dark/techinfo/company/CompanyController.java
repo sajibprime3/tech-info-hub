@@ -26,7 +26,7 @@ public class CompanyController {
     
     @GetMapping("/form")
     String showForm() {
-        return "page/companyForm";
+        return "fragment/companyForm";
     }
     
     

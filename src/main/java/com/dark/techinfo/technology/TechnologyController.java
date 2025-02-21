@@ -17,7 +17,7 @@ public class TechnologyController {
     public String showForm() {
         
         
-        return "page/technologyForm";
+        return "fragment/technologyForm";
     }
     
     @GetMapping("/selector")
