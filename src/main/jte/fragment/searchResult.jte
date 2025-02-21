@@ -14,28 +14,24 @@
                 <p>${company.getLocation()}</p>
             </div>
         </div>
-        <div class="tech mt-4">
-            <div class="relative group">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
-                     class="w-6 h-6">
-                <span
-                        class="absolute left-1/2 transform -translate-x-1/2 translate-y-2 opacity-0 group-hover:opacity-100 text-xs bg-gray-800 text-white px-2 py-1 rounded-lg">Java</span>
-            </div>
-            <div class="relative group ml-4">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"
-                     class="w-6 h-6">
-                <span
-                        class="absolute left-1/2 transform -translate-x-1/2 translate-y-2 opacity-0 group-hover:opacity-100 text-xs bg-gray-800 text-white px-2 py-1 rounded-lg">Docker</span>
-            </div>
+        <div class="tech mt-4 flex-wrap-reverse gap-1">
+            @for(TechnologyDto technology: company.getTechnologies())
+                <div class="relative group">
+                    <img src="${technology.getImageUrl()}" alt="${technology.getName()}"
+                         class="w-6 h-6">
+                    <span
+                            class="absolute left-1/2 transform -translate-x-1/2 translate-y-2 opacity-0 group-hover:opacity-100 text-xs bg-gray-800 text-white px-2 py-1 rounded-lg">${technology.getName()}</span>
+                </div>
+            @endfor
         </div>
-
+        
         <div class="tag p-4">
             <div class="mt-4">
                 <h3 class="text-sm font-medium text-gray-800">Tags:</h3>
                 <div class="flex flex-wrap gap-2 mt-2">
                     @for(TechnologyDto technology: company.getTechnologies())
                         @for(TagDto tag: technology.getTags())
-                            <span class="px-3 py-1 text-sm text-gray-800 bg-purple-100 bg-opacity-50 rounded">#${tag.getName()}</span>
+                            <span class="px-2 py-1 text-xs text-gray-800 bg-purple-100 bg-opacity-50 rounded">#${tag.getName()}</span>
                         @endfor
                     @endfor
                     
