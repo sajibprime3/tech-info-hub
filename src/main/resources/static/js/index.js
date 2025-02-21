@@ -13,3 +13,12 @@ function hide(target, showClass, hideClass) {
         node.classList.add(hideClass);
     }); 
 }
+
+function toggleCheck(checkbox, selectedMap) {
+    
+    if (checkbox.checked) {
+        selectedMap.set(parseInt(checkbox.value), checkbox.nextElementSibling.textContent);
+    } else {
+        selectedMap.delete(parseInt(checkbox.value));
+    }
+}

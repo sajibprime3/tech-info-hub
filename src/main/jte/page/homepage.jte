@@ -24,11 +24,14 @@
         </div>
 
         <div class="ml-auto flex flex-row gap-1">
-            <div class="flex justify-center self-center rounded-full bg-blue-700 text-white">
-                <a href="/company/form">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 15 15"><path fill="currentColor" d="M8 2.5a.5.5 0 0 0-1 0V7H2.5a.5.5 0 0 0 0 1H7v4.5a.5.5 0 0 0 1 0V8h4.5a.5.5 0 0 0 0-1H8V2.5Z"/></svg>
-                </a>
+            <div class="flex justify-center self-center rounded-full bg-blue-700 text-white"
+                 onclick="show('#companyFormPopup', 'flex', 'hidden');" 
+                 hx-get="/company/form" 
+                 hx-trigger="click" 
+                 hx-target="#companyFormPopup" 
+                 hx-swap="innerHTML">
                 
+                <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 15 15"><path fill="currentColor" d="M8 2.5a.5.5 0 0 0-1 0V7H2.5a.5.5 0 0 0 0 1H7v4.5a.5.5 0 0 0 1 0V8h4.5a.5.5 0 0 0 0-1H8V2.5Z"/></svg>
             </div>
             <!-- TODO Add menu.
             <div class="bg-zinc-400 justify-center self-center rounded-full text-white">
@@ -44,6 +47,6 @@
 main = @`
     
     <div class="w-full flex flex-col gap-1" id="result"></div>
-    
+    <div class="fixed inset-0 justify-center items-center hidden" id="companyFormPopup" ></div>
     
 `)
